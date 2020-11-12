@@ -9,10 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Installer
 {
     public partial class Form1 : Form
     {
+
         static string nameExe = "Authentication 2.0";
         static string pathExe = Directory.GetCurrentDirectory() + "\\" + nameExe + ".exe";
         public Form1()
@@ -25,7 +27,7 @@ namespace Installer
         {
             Close();
         }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
             folderBrowserDialog1.RootFolder = Environment.SpecialFolder.MyComputer;

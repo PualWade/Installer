@@ -7,14 +7,19 @@ using System.Threading.Tasks;
 
 namespace Installer
 {
-    class ComputerInformation
+    static class ComputerInformation
     {
-        public string UserName { get; set; }
-        public string ComputerName { get; set; }
-        public string PathWindows { get; set; }
-        public string PathSystemFiles { get; set; }
-        public int MouseButtons { get; set; }
-        public Size PrimaryMonitorSize { get; set; }
-        public int RAM { get; set; }
+        static ComputerInformation() 
+        { 
+
+        }
+        public static  string sd = Environment.UserName;
+        public static string UserName { get; set; }
+        public static string ComputerName { get; set; }
+        public static string PathWindows { get; set; }
+        public static string PathSystemFiles { get; set; }
+        public static int MouseButtons { get; set; }
+        public static Size PrimaryMonitorSize { get; set; }
+        public static int RAM { get; set; }
     }
 }
