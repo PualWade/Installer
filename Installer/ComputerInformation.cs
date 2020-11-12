@@ -9,17 +9,12 @@ namespace Installer
 {
     static class ComputerInformation
     {
-        static ComputerInformation() 
-        { 
-
-        }
-        public static  string sd = Environment.UserName;
-        public static string UserName { get; set; }
-        public static string ComputerName { get; set; }
-        public static string PathWindows { get; set; }
-        public static string PathSystemFiles { get; set; }
-        public static int MouseButtons { get; set; }
-        public static Size PrimaryMonitorSize { get; set; }
-        public static int RAM { get; set; }
+        public static string UserName = Environment.UserName;
+        public static string ComputerName = Environment.MachineName;
+        public static string PathWindows = "";
+        public static string PathSystemFiles = Environment.SystemDirectory;
+        public static int MouseButtons = System.Windows.Forms.SystemInformation.MouseButtons;
+        public static Size PrimaryMonitorSize = System.Windows.Forms.SystemInformation.PrimaryMonitorSize;
+        public static long RAM = Environment.WorkingSet;
     }
 }
