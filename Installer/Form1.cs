@@ -22,6 +22,7 @@ namespace Installer
         {
             InitializeComponent();
             label1.Text = Directory.GetCurrentDirectory();
+            byte[] a = ComputerInformation.Hash;
         }
 
         private void button3_Click(object sender, EventArgs e)
