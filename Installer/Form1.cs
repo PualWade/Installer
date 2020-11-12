@@ -18,6 +18,7 @@ namespace Installer
         public Form1()
         {
             InitializeComponent();
+            label1.Text = Directory.GetCurrentDirectory();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -37,7 +38,7 @@ namespace Installer
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            File.Copy(pathExe, label1.Text + "\\" + textBox2.Text + ".exe");
         }
     }
 }
