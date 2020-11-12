@@ -21,5 +21,8 @@ namespace Installer
         public static long Drive = new DriveInfo(Convert.ToString(Directory.GetCurrentDirectory()[0])).TotalSize;
         public static string TypeKeyboard = Keyboard.PrimaryDevice.ToString();
 
+        public static byte[] AllPropertiesBytes = Encoding.Default.GetBytes(UserName + ComputerName + PathWindows + PathSystemFiles + Convert.ToString(PrimaryMonitorSize.Height) + Convert.ToString(RAM) + Convert.ToString(Drive) + TypeKeyboard);
+
+        
     }
 }
