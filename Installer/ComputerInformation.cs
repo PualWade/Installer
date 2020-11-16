@@ -27,18 +27,22 @@ namespace Installer
 
         public static byte[] HashAndSign(byte[] encrypted)
         {
-            RSAParameters rsaPrivateParams;
-            RSACryptoServiceProvider rsaCSP = new RSACryptoServiceProvider();
+            Sender sender = new Sender();
+            return sender.HashAndSign(encrypted);
 
-            rsaPrivateParams = rsaCSP.ExportParameters(true);
+            //Sender sender = new Sender();
+            //RSAParameters rsaPrivateParams;
+            //RSACryptoServiceProvider rsaCSP = new RSACryptoServiceProvider();
+            //CspKeyContainerInfo a = rsaCSP.CspKeyContainerInfo;
+            //rsaPrivateParams = rsaCSP.ExportParameters(true);
 
-            SHA1Managed hash = new SHA1Managed();
-            byte[] hashedData;
+            //SHA1Managed hash = new SHA1Managed();
+            //byte[] hashedData;
+            //RSAPKCS1SignatureFormatter rSAPKCS1SignatureFormatter = new  RSAPKCS1SignatureFormatter(AsymmetricAlgorithm.Create())
+            //rsaCSP.ImportParameters(rsaPrivateParams);
 
-            rsaCSP.ImportParameters(rsaPrivateParams);
-
-            hashedData = hash.ComputeHash(encrypted);
-            return rsaCSP.SignHash(hashedData, CryptoConfig.MapNameToOID("SHA1"));
+            //hashedData = hash.ComputeHash(encrypted);
+            //return rsaCSP.SignHash(hashedData, CryptoConfig.MapNameToOID("SHA1"));
         }
     }
 }

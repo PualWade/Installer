@@ -15,11 +15,17 @@ namespace Installer
         public Sender()
         {
             RSACryptoServiceProvider rsaCSP = new RSACryptoServiceProvider();
-
-            //Generate public and private key data.
             rsaPrivateParams = rsaCSP.ExportParameters(true);
             rsaPubParams = rsaCSP.ExportParameters(false);
         }
+        public Sender(byte[] keyD)
+        {
+            RSAParameters rsaParameters = new RSAParameters();
+            rsaParameters.D = keyD;
+            rsaPrivateParams = rsaParameters;
+            rsaPubParams = rsaParameters;
+        }
+
 
         public RSAParameters PublicParameters
         {
@@ -45,7 +51,7 @@ namespace Installer
         public byte[] EncryptData(RSAParameters rsaParams, byte[] toEncrypt)
         {
             RSACryptoServiceProvider rsaCSP = new RSACryptoServiceProvider();
-
+            
             rsaCSP.ImportParameters(rsaParams);
             return rsaCSP.Encrypt(toEncrypt, false);
         }
